@@ -1,0 +1,61 @@
+.standard-button {
+	display: table;
+	width: 120px;
+	background-color: gray;
+	color: white;
+	padding-left: 8px;
+	padding-right: 8px;
+	height: 30px;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.standard-button div {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.left {
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.decision-row {
+	margin-top: 10px;
+}
+
+.decision-row div {
+	margin-right: 10px;
+}
+
+.choice-header, .other-entry, .other-entry-error {
+	margin-top: 10px;
+}
+
+.drinks-buttons div {
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.saved-drink {
+	color: green;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.cancelled-drink {
+	color: red;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.drink-entry-input {
+	width: 250px;
+	background-color: #eee;
+	margin-right: 10px;
+	padding: 3px;
+}

@@ -1,0 +1,51 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <!-- <div class="list card">
+      <div class="item item-divider">enter button</div>
+      <div class="item item-body">
+        <div class="standard-button enter-region" ng-click="didEnterRegion()">
+          <div>
+            Enter region
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="list card">
+      <div class="item item-divider">Pending drink events</div>
+      <div class="item item-body">
+        <div class="pending-drink" ng-repeat="pendingDrink in pendingDrinks">
+          <div>
+            {{niceFormatDate(pendingDrink.dateTime)}}
+          </div>
+          <div class="decision-row" ng-if="!(pendingDrink.saved || pendingDrink.cancelled)">
+            <div class="standard-button left" ng-click="setDrink(pendingDrink, 'Yes')"><div>Yes, drank</div></div>
+            <div class="standard-button left" ng-click="setDrink(pendingDrink, 'No')"><div>No drink</div></div>
+            <div class="clear"></div>
+          </div>
+          <div class="saved-drink" ng-if="pendingDrink.saved">{{pendingDrink.drinkChoice}} - Saved!</div>
+          <div class="cancelled-drink" ng-if="pendingDrink.cancelled">Cancelled!</div>
+          <div class="choice-row" ng-if="pendingDrink.choose && !pendingDrink.saved">
+            <div class="choice-header" ng-if="!pendingDrink.showOther">What drink did you take?</div>
+            <div class="drinks-buttons" ng-if="!pendingDrink.showOther">
+              <div class="standard-button left" ng-click="choseDrink(pendingDrink, 'Water')"><div>Water</div></div>
+              <div class="standard-button left" ng-click="choseDrink(pendingDrink, 'Tea')"><div>Tea</div></div>
+              <div class="standard-button left" ng-click="choseDrink(pendingDrink, 'Coffee')"><div>Coffee</div></div>
+              <div class="standard-button left" ng-click="choseDrink(pendingDrink, 'Squash')"><div>Squash</div></div>
+              <div class="standard-button left" ng-click="choseDrink(pendingDrink, 'Other')"><div>Other</div></div>
+            </div>
+            <div class="other-entry-error" ng-if="pendingDrink.invalidOtherText">
+              Only letters in this field please.
+            </div>
+            <div class="other-entry" ng-if="pendingDrink.showOther && !pendingDrink.saved">
+              <input type="text" placeholder="Enter drink name" class="left drink-entry-input" ng-model="pendingDrink.otherText">
+              <div class="standard-button left" ng-click="saveOther(pendingDrink)">
+                <div>Save</div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
